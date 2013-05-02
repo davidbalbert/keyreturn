@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keyreturn</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if flash[:success] %>
+  <div id="success"><%= flash[:success] %></div>
+<% end %>
+
+<% if flash[:failure] %>
+  <div id="failure"><%= flash[:failure] %></div>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>

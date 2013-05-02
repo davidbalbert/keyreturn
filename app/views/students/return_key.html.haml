@@ -1,0 +1,22 @@
+- if @student
+  %h1 Return a key for #{@student.name}
+- else
+  %h1 Return a key
+
+%h2 Pick a student
+= form_tag root_path, :method => :get, :id => "select-student-form" do
+  = select_tag "student_id", options_from_collection_for_select(Student.order("lower(last_name) ASC"), "id", "name", params[:student_id]), include_blank: true
+
+- if @student
+  = form_for @student do |f|
+    #key
+      = f.label :returned_key
+      = f.check_box :returned_key
+    #card
+      = f.label :returned_card
+      = f.check_box :returned_card
+    #card-id
+      = f.label :card_id
+      = f.text_field :card_id
+    #submit
+    = f.submit "Update #{@student.first_name}"
