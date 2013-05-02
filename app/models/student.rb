@@ -1,4 +1,6 @@
 class Student < ActiveRecord::Base
+  validates :card_id, presence: true, if: :returned_card?
+
   def name
     if middle_name.blank?
       "#{first_name} #{last_name}"
