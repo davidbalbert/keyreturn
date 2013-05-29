@@ -4,23 +4,38 @@
 
 %ul
   - @missing_everything.each do |s|
-    %li= s.name
+    %li
+      = s.name
+      - if s.notes.present?
+        &ndash;
+        = s.notes
 
 %h2 Students who are missing cards
 
 %ul
   - @missing_cards.each do |s|
-    %li= s.name
+    %li
+      = s.name
+      - if s.notes.present?
+        &ndash;
+        = s.notes
 
 %h2 Students who are missing keys
 
 %ul
   - @missing_keys.each do |s|
-    %li= s.name
+    %li
+      = s.name
+      - if s.notes.present?
+        &ndash;
+        = s.notes
 
 %h2 Students who have returned everything
 
 %ul
   - @have_everything.each do |s|
-    %li= s.name
-
+    %li
+      = s.name
+      - if s.notes.present?
+        &ndash;
+        = s.notes

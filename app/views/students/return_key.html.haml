@@ -18,5 +18,8 @@
     #card-id
       = f.label :card_id
       = f.text_field :card_id
+    #notes
+      = f.label :notes
+      = f.text_area :notes
     #submit
     = f.submit "Update #{@student.first_name}"

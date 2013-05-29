@@ -26,6 +26,6 @@ class StudentsController < ApplicationController
 
   private
   def student_params
-    params.require(:student).permit(:returned_key, :returned_card, :card_id)
+    params.require(:student).permit(:returned_key, :returned_card, :card_id, :notes)
   end
 end
