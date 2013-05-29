@@ -1,4 +1,11 @@
 class StudentsController < ApplicationController
+  def index
+    @missing_everything = Student.where(returned_key: false, returned_card: false)
+    @missing_cards = Student.where(returned_key: true, returned_card: false)
+    @missing_keys = Student.where(returned_key: false, returned_card: true)
+    @have_everything = Student.where(returned_key: true, returned_card: true)
+  end
+
   def return_key
     if params[:student_id].present?
       @student = Student.find(params[:student_id])

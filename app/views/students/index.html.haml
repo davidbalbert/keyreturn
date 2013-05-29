@@ -1,0 +1,26 @@
+%h1 Key Report
+
+%h2 Students who haven't returned anything
+
+%ul
+  - @missing_everything.each do |s|
+    %li= s.name
+
+%h2 Students who are missing cards
+
+%ul
+  - @missing_cards.each do |s|
+    %li= s.name
+
+%h2 Students who are missing keys
+
+%ul
+  - @missing_keys.each do |s|
+    %li= s.name
+
+%h2 Students who have returned everything
+
+%ul
+  - @have_everything.each do |s|
+    %li= s.name
+
