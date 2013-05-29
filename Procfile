@@ -1,1 +1,1 @@
-web: bin/rails s -p $PORT
+web: bin/unicorn --no-default-middleware -p $PORT -c ./config/unicorn.rb
