@@ -3,39 +3,19 @@
 %h2 Students who haven't returned anything
 
 %ul
-  - @missing_everything.each do |s|
-    %li
-      = s.name
-      - if s.notes.present?
-        &ndash;
-        = s.notes
+  = render @missing_everything
 
 %h2 Students who are missing cards
 
 %ul
-  - @missing_cards.each do |s|
-    %li
-      = s.name
-      - if s.notes.present?
-        &ndash;
-        = s.notes
+  = render @missing_cards
 
 %h2 Students who are missing keys
 
 %ul
-  - @missing_keys.each do |s|
-    %li
-      = s.name
-      - if s.notes.present?
-        &ndash;
-        = s.notes
+  = render @missing_keys
 
 %h2 Students who have returned everything
 
 %ul
-  - @have_everything.each do |s|
-    %li
-      = s.name
-      - if s.notes.present?
-        &ndash;
-        = s.notes
+  = render @have_everything

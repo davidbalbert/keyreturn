@@ -1,0 +1,5 @@
+%li
+  = link_to student.name, root_path(student_id: student.id)
+  - if student.notes.present?
+    &ndash;
+    = student.notes
