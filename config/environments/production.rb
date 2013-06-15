@@ -79,5 +79,5 @@ Keyreturn::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.logger = ActiveSupport::Logger.new(STDOUT)
-  config.logger.level = Logger.const_get(ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'INFO')
+  config.logger.level = ActiveSupport::Logger.const_get(ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'INFO')
 end

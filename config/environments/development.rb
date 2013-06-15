@@ -28,5 +28,5 @@ Keyreturn::Application.configure do
   config.assets.debug = true
 
   config.logger = ActiveSupport::Logger.new(STDOUT)
-  config.logger.level = Logger.const_get(ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'DEBUG')
+  config.logger.level = ActiveSupport::Logger.const_get(ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'DEBUG')
 end
