@@ -15,8 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function () {
-    $("#select-student-form select").on("change", function() {
-        $(this).closest("form").submit();
-    })
-});
+$(document).on("change", "#select-student-form select", function() {
+    $(this).closest("form").submit();
+})
