@@ -1,0 +1,11 @@
+= link_to "Back home", root_path
+= render 'search_form'
+
+%h1 Search results for "#{params[:q]}"
+
+- if @results.empty?
+  %p There were no search results for "#{params[:q]}"
+- else
+  %ul
+    = render @results
+

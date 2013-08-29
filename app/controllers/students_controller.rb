@@ -24,6 +24,10 @@ class StudentsController < ApplicationController
     end
   end
 
+  def search
+    @results = Student.where("lower(card_id) = lower(?)", params[:q])
+  end
+
   private
   def student_params
     params.require(:student).permit(:returned_key, :returned_card, :card_id, :notes)
